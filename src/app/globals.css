@@ -1,3 +1,7 @@
+/* https://abhijitrawool.com/restaurant-website-color-palettes/ */
+/* #a8763e, #6f1a07, #fdfefd, #0d1010, #281e16*/
+/* 黄、赤、白、黒、茶 */
+
 @import "tailwindcss";
 
 :root {
@@ -22,5 +26,41 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: serif, sans-serif;
+}
+
+header {
+  background-color: #6f1a07;
+  color: white;
+  height: 60px;
+}
+
+footer {
+  background-color: #6f1a07;
+  color: white;
+  padding: 20px;
+}
+
+#menu img {
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  #menu img {
+    width: 95%;
+  }
+}
+
+#menu-header {
+  font-size: 25px
+}
+
+@media (max-width: 600px) {
+  #menu-header {
+    font-size: 15px;
+  }
+}
+
+#menu-header h3 {
+  font-weight: bold;
 }
