@@ -52,7 +52,7 @@ footer {
 }
 
 #menu-header {
-  font-size: 25px
+  font-size: 20px
 }
 
 @media (max-width: 600px) {
@@ -66,3 +66,41 @@ footer {
 }
 
 html { scroll-behavior: smooth; }
+
+#menu-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  transition: opacity 0.2s ease;
+}
+
+#menu-button:hover {
+  opacity: 0.8;
+}
+
+#menu-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+#otsukare_2pin {
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  #otsukare_2pin {
+    width: 100%;
+  }
+}
+
+#otsukare_400 {
+  width: 20%;
+}
+
+@media (max-width: 600px) {
+  #otsukare_400 {
+    width: 50%;
+  }
+}

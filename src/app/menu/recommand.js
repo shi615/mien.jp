@@ -94,7 +94,7 @@ export default function Recommand() {
                     <p style={{ marginTop: "8px" }}>焼き餃子</p>
                 </li>
             </ul>
-            <a href="/menu" style={{
+            <a href="/menu/tanpin" style={{
                 backgroundColor: "#e6d3a3",
                 color: "#5e503f",
                 fontSize: "20px",

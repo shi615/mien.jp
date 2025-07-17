@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './header';
-import Main from './main';
-import Recommand from './menu/recommand';
-import TakeOut from './takeOut';
-import Footer from './footer';
+import Header from '@/app/header';
+import Main from '@/app/main';
+import Recommand from '@/app/menu/recommand';
+import TakeOut from '@/app/takeOut';
+import Footer from '@/app/footer';
 
 export default function HomePage() {
   return (

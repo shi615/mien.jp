@@ -1,40 +1,42 @@
 import React from "react";
-import Header from "../header";
-import Footer from "../footer";
+import Header from "@/app/header";
+import Footer from "@/app/footer";
 
 export default function Menu() {
   return (
     <div>
       <Header />
+      <h2
+        id="tanpin"
+        style={{
+          textAlign: "center",
+          fontSize: "20px",
+          fontWeight: "bold",
+          background: "#e6d3a3",
+          paddingTop: "10px",
+        }}
+      >
+        メニュー
+      </h2>
       <div
         id="menu-header"
         style={{
+          background: "#e6d3a3",
+          color: "#5e503f",
           padding: "5px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
           position: "sticky",
           top: 0,
-          background: "#e6d3a3",
           zIndex: 1000,
-          boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-          color: "#5e503f",
         }}
       >
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "30px",
-            margin: "10px",
-            fontWeight: "bold",
-          }}
-        >
-          メニュー
-        </h2>
         <ul
           style={{
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            gap: "16px",
-            padding: 0,
+            gap: "13px",
+            padding: "10px",
             listStyle: "none",
           }}
         >
@@ -113,7 +115,7 @@ export default function Menu() {
           <h2
             id="zensai"
             style={{
-              scrollMarginTop: "250px",
+              scrollMarginTop: "170px",
               textAlign: "center",
               fontSize: "30px",
               color: "#EA332F",
@@ -121,7 +123,7 @@ export default function Menu() {
           >
             前菜
           </h2>
-          <img src="./menu/zensai.jpeg" alt="前菜" />
+          <img src="/menu/zensai.jpeg" alt="前菜" />
         </div>
         {/* 揚げ物 */}
         <div
@@ -143,7 +145,7 @@ export default function Menu() {
           >
             揚げ物
           </h2>
-          <img src="./menu/agemono.jpeg" alt="揚げ物" />
+          <img src="/menu/agemono.jpeg" alt="揚げ物" />
         </div>
         {/* 肉料理 */}
         <div
@@ -165,7 +167,7 @@ export default function Menu() {
           >
             肉料理
           </h2>
-          <img src="./menu/niku.jpeg" alt="肉料理" />
+          <img src="/menu/niku.jpeg" alt="肉料理" />
         </div>
         {/* 野菜料理 */}
         <div
@@ -187,7 +189,7 @@ export default function Menu() {
           >
             野菜料理
           </h2>
-          <img src="./menu/yasai.jpeg" alt="野菜料理" />
+          <img src="/menu/yasai.jpeg" alt="野菜料理" />
         </div>
         {/* 海鮮料理 */}
         <div
@@ -209,7 +211,7 @@ export default function Menu() {
           >
             海鮮料理
           </h2>
-          <img src="./menu/kaisen.jpeg" alt="海鮮料理" />
+          <img src="/menu/kaisen.jpeg" alt="海鮮料理" />
         </div>
         {/* 鉄板 */}
         <div
@@ -231,7 +233,7 @@ export default function Menu() {
           >
             鉄板
           </h2>
-          <img src="./menu/teppan.jpeg" alt="鉄板" />
+          <img src="/menu/teppan.jpeg" alt="鉄板" />
         </div>
         {/* 点心 */}
         <div
@@ -253,7 +255,7 @@ export default function Menu() {
           >
             点心
           </h2>
-          <img src="./menu/tenshin.jpeg" alt="点心" />
+          <img src="/menu/tenshin.jpeg" alt="点心" />
         </div>
         {/* お粥・スープ */}
         <div
@@ -275,7 +277,7 @@ export default function Menu() {
           >
             お粥・スープ
           </h2>
-          <img src="./menu/okayu.jpeg" alt="お粥・スープ" />
+          <img src="/menu/okayu.jpeg" alt="お粥・スープ" />
         </div>
         {/* 麺類 */}
         <div
@@ -297,7 +299,7 @@ export default function Menu() {
           >
             麺類
           </h2>
-          <img src="./menu/menrui.jpeg" alt="麺類" />
+          <img src="/menu/menrui.jpeg" alt="麺類" />
         </div>
         {/* 飯類 */}
         <div
@@ -319,7 +321,7 @@ export default function Menu() {
           >
             飯類
           </h2>
-          <img src="./menu/hanrui.jpeg" alt="飯類" />
+          <img src="/menu/hanrui.jpeg" alt="飯類" />
         </div>
         {/* アルコール */}
         <div
@@ -341,7 +343,7 @@ export default function Menu() {
           >
             アルコール
           </h2>
-          <img src="./menu/alcohol.jpeg" alt="アルコール" />
+          <img src="/menu/alcohol.jpeg" alt="アルコール" />
         </div>
         {/* ドリンク */}
         <div
@@ -363,7 +365,7 @@ export default function Menu() {
           >
             ドリンク
           </h2>
-          <img src="./menu/drink.jpeg" alt="ドリンク" />
+          <img src="/menu/drink.jpeg" alt="ドリンク" />
         </div>
       </div>
       <Footer />
