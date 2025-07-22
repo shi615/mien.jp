@@ -46,7 +46,7 @@ export default function Header() {
                             <a href="/menu/tanpin" style={menuStyle}>単品</a>
                         </li>
                         <li>
-                            <a href="/menu/teisyoku" style={menuStyle}>定食</a>
+                            <a href="/menu/teisyoku" style={menuStyle}>ランチ・定食・セット</a>
                         </li>
                         <li>
                             <a href="/menu/otsukare" style={menuStyle}>お疲れ様酒セット</a>

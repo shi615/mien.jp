@@ -104,3 +104,25 @@ html { scroll-behavior: smooth; }
     width: 50%;
   }
 }
+
+#teisyoku-body img{
+  width: 40%;
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  #teisyoku-body img {
+    width: 95%;
+  }
+}
+
+#tabehodai-body img{
+  width: 40%;
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  #tabehodai-body img {
+    width: 95%;
+  }
+}
