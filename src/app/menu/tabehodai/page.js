@@ -15,7 +15,6 @@ export default function Tabehodai() {
           padding: "10px",
           background: "#e6d3a3",
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-          marginBottom: "20px",
         }}
       >
         食べ放題・飲み放題

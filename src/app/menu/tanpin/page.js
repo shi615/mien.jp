@@ -12,11 +12,13 @@ export default function Menu() {
           textAlign: "center",
           fontSize: "20px",
           fontWeight: "bold",
+          color: "#5e503f",
+          padding: "10px",
           background: "#e6d3a3",
-          paddingTop: "10px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
         }}
       >
-        メニュー
+        単品
       </h2>
       <div
         id="menu-header"
