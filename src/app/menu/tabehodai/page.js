@@ -29,6 +29,7 @@ export default function Tabehodai() {
       >
         <img src="/menu/tabehodai_1.jpg" alt="食べ放題・飲み放題1" style={{ maxWidth: "600px", margin: "20px 0" }} />
         <img src="/menu/tabehodai_2.jpg" alt="食べ放題・飲み放題2" style={{ maxWidth: "600px", margin: "20px 0" }} />
+        <img src="/menu/tabehodai_3.jpg" alt="食べ放題・飲み放題3" style={{ maxWidth: "600px", margin: "20px 0" }} />
       </div>
       <Footer />
     </div>

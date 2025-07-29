@@ -126,3 +126,13 @@ html { scroll-behavior: smooth; }
     width: 95%;
   }
 }
+
+.main-image {
+  width: 50%
+}
+
+@media (max-width: 600px) {
+  .main-image {
+    width: 100%
+  }
+}

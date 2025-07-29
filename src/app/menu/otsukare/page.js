@@ -27,7 +27,7 @@ export default function Otsukare() {
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
         }}
       >
-        お疲れ様酒セット
+        お疲れ様酒セット（1380円）
       </h2>
       <div
         style={{
@@ -38,7 +38,7 @@ export default function Otsukare() {
           borderRadius: "8px",
         }}
       >
-        飲み物は下記から１杯選べます
+        飲み物は下記から１種選べます
         <ul style={{ listStyle: "none", padding: 0, margin: "10px 0" }}>
           {drinks.map((drink, idx) => (
             <li key={idx}>{drink}</li>

@@ -1,7 +1,7 @@
 export default function TakeOut() {
     return (
         <div style={{ padding: "20px", textAlign: "center" }}>
-            <h2 style={{ fontSize: "30px", fontWeight: "bold"}}>テイクアウト</h2>
+            <h2 style={{ fontSize: "24px", fontWeight: "bold"}}>テイクアウト</h2>
             <p>出前館とUberEatsがご利用可能！</p>
             <p>↓アイコンをタップ↓</p>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
