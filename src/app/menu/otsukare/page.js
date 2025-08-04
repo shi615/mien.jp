@@ -1,5 +1,6 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
+import Image from "next/image";
 
 export default function Otsukare() {
   const drinks = [
@@ -71,10 +72,13 @@ export default function Otsukare() {
         <div
           style={{ display: "flex", justifyContent: "center", margin: "10px" }}
         >
-          <img
+          <Image
             id="otsukare_2pin"
             src="/menu/otsukare_2pin.jpeg"
             alt="お疲れ様酒セット_２品"
+            width={400}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
       </div>
@@ -105,10 +109,13 @@ export default function Otsukare() {
         <div
           style={{ display: "flex", justifyContent: "center", margin: "10px" }}
         >
-          <img
+          <Image
             id="otsukare_400"
             src="/menu/otsukare_400.jpeg"
             alt="お疲れ様酒セット_400円"
+            width={400}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
       </div>

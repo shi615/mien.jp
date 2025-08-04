@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Recommand() {
     return (
         <div style={{ margin: "32px 0", textAlign: "center" }}>
@@ -20,10 +22,11 @@ export default function Recommand() {
                     height: "100%",
                     margin: "0 8px"
                 }}>
-                    <img
-                        src="./globe.svg"
+                    <Image
+                        src="/globe.svg"
                         alt="焼き餃子"
-                        style={{ width: "100px", height: "100px" }}
+                        width={100}
+                        height={100}
                     />
                     <p style={{ marginTop: "8px" }}>焼き餃子</p>
                 </li>
@@ -37,10 +40,11 @@ export default function Recommand() {
                     height: "100%",
                     margin: "0 8px"
                 }}>
-                    <img
-                        src="./globe.svg"
+                    <Image
+                        src="/globe.svg"
                         alt="青菜炒め"
-                        style={{ width: "100px", height: "100px" }}
+                        width={100}
+                        height={100}
                     />
                     <p style={{ marginTop: "8px" }}>青菜炒め</p>
                 </li>
@@ -54,10 +58,11 @@ export default function Recommand() {
                     height: "100%",
                     margin: "0 8px"
                 }}>
-                    <img
-                        src="./globe.svg"
+                    <Image
+                        src="/globe.svg"
                         alt="餃子"
-                        style={{ width: "100px", height: "100px" }}
+                        width={100}
+                        height={100}
                     />
                     <p style={{ marginTop: "8px" }}>焼き餃子</p>
                 </li>
@@ -70,10 +75,11 @@ export default function Recommand() {
                     height: "100%",
                     margin: "0 8px"
                 }}>
-                    <img
-                        src="./globe.svg"
+                    <Image
+                        src="/globe.svg"
                         alt="餃子"
-                        style={{ width: "100px", height: "100px" }}
+                        width={100}
+                        height={100}
                     />
                     <p style={{ marginTop: "8px" }}>焼き餃子</p>
                 </li>
@@ -86,10 +92,11 @@ export default function Recommand() {
                     height: "100%",
                     margin: "0 8px"
                 }}>
-                    <img
-                        src="./globe.svg"
+                    <Image
+                        src="/globe.svg"
                         alt="餃子"
-                        style={{ width: "100px", height: "100px" }}
+                        width={100}
+                        height={100}
                     />
                     <p style={{ marginTop: "8px" }}>焼き餃子</p>
                 </li>

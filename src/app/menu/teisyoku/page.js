@@ -1,5 +1,7 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Teisyoku() {
   return (
@@ -31,19 +33,19 @@ export default function Teisyoku() {
           }}
         >
           <li>
-            <a href="#lunch">
+            <Link href="#lunch">
               <h3 style={{ borderBottom: "1px solid" }}>ランチ</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#teiysoku">
+            <Link href="#teiysoku">
               <h3 style={{ borderBottom: "1px solid" }}>定食</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#set">
+            <Link href="#set">
               <h3 style={{ borderBottom: "1px solid" }}>セット</h3>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -68,7 +70,13 @@ export default function Teisyoku() {
           >
             ランチ
           </h2>
-          <img src="/menu/lunch.jpeg" alt="ランチ" />
+          <Image
+            src="/menu/lunch.jpeg"
+            alt="ランチ"
+            width={400}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
         </div>
         {/* 定食 */}
         <div
@@ -90,7 +98,13 @@ export default function Teisyoku() {
           >
             定食
           </h2>
-          <img src="/menu/teisyoku.jpeg" alt="定食" />
+          <Image
+            src="/menu/teisyoku.jpeg"
+            alt="定食"
+            width={400}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
         </div>
         {/* セット */}
         <div
@@ -112,7 +126,13 @@ export default function Teisyoku() {
           >
             セット
           </h2>
-          <img src="/menu/set.jpeg" alt="セット" />
+          <Image
+            src="/menu/set.jpeg"
+            alt="セット"
+            width={400}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
         </div>
       </div>
       <Footer />

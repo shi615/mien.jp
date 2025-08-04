@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const images = [
   "/enkai_1.jpg",
@@ -19,16 +20,19 @@ export default function ImageSlider() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ position: "relative", width: "100%", margin: "auto" }}>
-        <img
+      <div style={{ position: "relative", width: "100%", maxWidth: 600, margin: "auto", height: 300 }}>
+        <Image
           id="main-image"
           src={images[current]}
           alt={`slide-${current}`}
+          fill
           style={{
-            width: "100%",
-            height: "300px",
+            objectFit: "cover",
             boxShadow: "0 2px 16px rgba(0,0,0,0.2)",
+            borderRadius: 8,
           }}
+          sizes="(max-width: 600px) 100vw, 600px"
+          priority
         />
         <button
           onClick={prevSlide}
@@ -44,6 +48,7 @@ export default function ImageSlider() {
             height: "50px",
             cursor: "pointer",
             fontSize: "24px",
+            zIndex: 2,
           }}
         >
           {"<"}
@@ -62,6 +67,7 @@ export default function ImageSlider() {
             height: "50px",
             cursor: "pointer",
             fontSize: "24px",
+            zIndex: 2,
           }}
         >
           {">"}

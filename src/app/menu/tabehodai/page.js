@@ -1,5 +1,6 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
+import Image from "next/image";
 
 export default function Tabehodai() {
   return (
@@ -27,9 +28,27 @@ export default function Tabehodai() {
           alignItems: "center",
         }}
       >
-        <img src="/menu/tabehodai_1.jpg" alt="食べ放題・飲み放題1" style={{ maxWidth: "600px", margin: "20px 0" }} />
-        <img src="/menu/tabehodai_2.jpg" alt="食べ放題・飲み放題2" style={{ maxWidth: "600px", margin: "20px 0" }} />
-        <img src="/menu/tabehodai_3.jpg" alt="食べ放題・飲み放題3" style={{ maxWidth: "600px", margin: "20px 0" }} />
+        <Image
+          src="/menu/tabehodai_1.jpg"
+          alt="食べ放題・飲み放題1"
+          width={600}
+          height={400}
+          style={{ maxWidth: "600px", margin: "20px 0", height: "auto" }}
+        />
+        <Image
+          src="/menu/tabehodai_2.jpg"
+          alt="食べ放題・飲み放題2"
+          width={600}
+          height={400}
+          style={{ maxWidth: "600px", margin: "20px 0", height: "auto" }}
+        />
+        <Image
+          src="/menu/tabehodai_3.jpg"
+          alt="食べ放題・飲み放題3"
+          width={600}
+          height={400}
+          style={{ maxWidth: "600px", margin: "20px 0", height: "auto" }}
+        />
       </div>
       <Footer />
     </div>

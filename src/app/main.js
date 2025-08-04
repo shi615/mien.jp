@@ -1,4 +1,5 @@
 import ImageSlider from "@/app/imageSlider";
+import Link from "next/link";
 
 export default function Main() {
   return (
@@ -17,7 +18,15 @@ export default function Main() {
         <h2 style={{ fontSize: '24px', fontWeight: 'bold', paddingTop: '20px' }}>
           お持ち帰り電話でご注文ください！
         </h2>
-      <p><a style={{fontSize: "20px", borderBottom: "1px solid"}} href="tel:0566-77-4665">0566-77-4665</a>（11:00~23:30）</p>
+        <p>
+          <Link
+            href="tel:0566-77-4665"
+            style={{fontSize: "20px", borderBottom: "1px solid"}}
+          >
+            0566-77-4665
+          </Link>
+          （11:00~23:30）
+        </p>
       </div>
     </div>
   )

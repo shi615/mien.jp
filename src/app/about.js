@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function About() {
   return (
     <div style={{ padding: "20px"}}>
@@ -7,16 +9,26 @@ export default function About() {
       <ul style={{ textAlign: "center"}}>
         <li style={{ margin: "5px 0" }}>
           新米
-          <a style={{ borderBottom: "1px solid" }} href="https://kuriya.co.jp/blog/other/20201009-1975.html">
+          <Link
+            href="https://kuriya.co.jp/blog/other/20201009-1975.html"
+            style={{ borderBottom: "1px solid" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             「あいちのかおり」
-          </a>
+          </Link>
           を使用！
         </li>
         <li>
           愛知県西尾市養鶏場
-          <a style={{ borderBottom: "1px solid" }} href="https://kira-farm.com/">
+          <Link
+            href="https://kira-farm.com/"
+            style={{ borderBottom: "1px solid" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             「吉良農場」
-          </a>
+          </Link>
           の卵を使用しています！
         </li>
       </ul>

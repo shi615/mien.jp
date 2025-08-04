@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -12,10 +14,16 @@ export default function Header() {
     }
     return (
         <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", position: "relative" }}>
-            <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "black" }}>
-                <img src="/menu/logo.jpeg" style={{ height: "60px", padding: "5px 10px" }} />
+            <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "black" }}>
+                <Image
+                    src="/menu/logo.jpeg"
+                    alt="Logo"
+                    height={60}
+                    width={60}
+                    style={{ height: "60px", width: "60px", objectFit: "cover", padding: "5px 10px" }}
+                />
                 <h1 style={{ fontSize: 25, fontWeight: "bold", margin: 0, color: "white" }}>中華美食 味縁</h1>
-            </a>
+            </Link>
             <button
                 id="menu-button"
                 onClick={() => setMenuOpen(!menuOpen)}
@@ -43,16 +51,16 @@ export default function Header() {
                 }}>
                     <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
                         <li>
-                            <a href="/menu/tanpin" style={menuStyle}>単品</a>
+                            <Link href="/menu/tanpin" style={menuStyle}>単品</Link>
                         </li>
                         <li>
-                            <a href="/menu/teisyoku" style={menuStyle}>ランチ・定食・セット</a>
+                            <Link href="/menu/teisyoku" style={menuStyle}>ランチ・定食・セット</Link>
                         </li>
                         <li>
-                            <a href="/menu/otsukare" style={menuStyle}>お疲れ様酒セット</a>
+                            <Link href="/menu/otsukare" style={menuStyle}>お疲れ様酒セット</Link>
                         </li>
                         <li>
-                            <a href="/menu/tabehodai" style={menuStyle}>食べ放題・飲み放題</a>
+                            <Link href="/menu/tabehodai" style={menuStyle}>食べ放題・飲み放題</Link>
                         </li>
                     </ul>
                 </nav>

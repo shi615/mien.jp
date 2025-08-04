@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "@/app/header";
 import Footer from "@/app/footer";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Menu() {
   return (
@@ -43,64 +45,64 @@ export default function Menu() {
           }}
         >
           <li>
-            <a href="#zensai">
+            <Link href="#zensai">
               <h3 style={{ borderBottom: "1px solid" }}>前菜</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#agemono">
+            <Link href="#agemono">
               <h3 style={{ borderBottom: "1px solid" }}>揚げ物</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#niku">
+            <Link href="#niku">
               <h3 style={{ borderBottom: "1px solid" }}>肉料理</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#yasai">
+            <Link href="#yasai">
               <h3 style={{ borderBottom: "1px solid" }}>野菜料理</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#kaisen">
+            <Link href="#kaisen">
               <h3 style={{ borderBottom: "1px solid" }}>海鮮料理</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#teppan">
+            <Link href="#teppan">
               <h3 style={{ borderBottom: "1px solid" }}>鉄板</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#tenshin">
+            <Link href="#tenshin">
               <h3 style={{ borderBottom: "1px solid" }}>点心</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#okayu">
+            <Link href="#okayu">
               <h3 style={{ borderBottom: "1px solid" }}>お粥・スープ</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#menrui">
+            <Link href="#menrui">
               <h3 style={{ borderBottom: "1px solid" }}>麺類</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#hanrui">
+            <Link href="#hanrui">
               <h3 style={{ borderBottom: "1px solid" }}>飯類</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#alcohol">
+            <Link href="#alcohol">
               <h3 style={{ borderBottom: "1px solid" }}>アルコール</h3>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#drink">
+            <Link href="#drink">
               <h3 style={{ borderBottom: "1px solid" }}>ドリンク</h3>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -125,7 +127,7 @@ export default function Menu() {
           >
             前菜
           </h2>
-          <img src="/menu/zensai.jpeg" alt="前菜" />
+          <Image src="/menu/zensai.jpeg" alt="前菜" width={400} height={300} />
         </div>
         {/* 揚げ物 */}
         <div
@@ -147,7 +149,7 @@ export default function Menu() {
           >
             揚げ物
           </h2>
-          <img src="/menu/agemono.jpeg" alt="揚げ物" />
+          <Image src="/menu/agemono.jpeg" alt="揚げ物" width={400} height={300} />
         </div>
         {/* 肉料理 */}
         <div
@@ -169,7 +171,7 @@ export default function Menu() {
           >
             肉料理
           </h2>
-          <img src="/menu/niku.jpeg" alt="肉料理" />
+          <Image src="/menu/niku.jpeg" alt="肉料理" width={400} height={300} />
         </div>
         {/* 野菜料理 */}
         <div
@@ -191,7 +193,7 @@ export default function Menu() {
           >
             野菜料理
           </h2>
-          <img src="/menu/yasai.jpeg" alt="野菜料理" />
+          <Image src="/menu/yasai.jpeg" alt="野菜料理" width={400} height={300} />
         </div>
         {/* 海鮮料理 */}
         <div
@@ -213,7 +215,7 @@ export default function Menu() {
           >
             海鮮料理
           </h2>
-          <img src="/menu/kaisen.jpeg" alt="海鮮料理" />
+          <Image src="/menu/kaisen.jpeg" alt="海鮮料理" width={400} height={300} />
         </div>
         {/* 鉄板 */}
         <div
@@ -235,7 +237,7 @@ export default function Menu() {
           >
             鉄板
           </h2>
-          <img src="/menu/teppan.jpeg" alt="鉄板" />
+          <Image src="/menu/teppan.jpeg" alt="鉄板" width={400} height={300} />
         </div>
         {/* 点心 */}
         <div
@@ -257,7 +259,7 @@ export default function Menu() {
           >
             点心
           </h2>
-          <img src="/menu/tenshin.jpeg" alt="点心" />
+          <Image src="/menu/tenshin.jpeg" alt="点心" width={400} height={300} />
         </div>
         {/* お粥・スープ */}
         <div
@@ -279,7 +281,7 @@ export default function Menu() {
           >
             お粥・スープ
           </h2>
-          <img src="/menu/okayu.jpeg" alt="お粥・スープ" />
+          <Image src="/menu/okayu.jpeg" alt="お粥・スープ" width={400} height={300} />
         </div>
         {/* 麺類 */}
         <div
@@ -301,7 +303,7 @@ export default function Menu() {
           >
             麺類
           </h2>
-          <img src="/menu/menrui.jpeg" alt="麺類" />
+          <Image src="/menu/menrui.jpeg" alt="麺類" width={400} height={300} />
         </div>
         {/* 飯類 */}
         <div
@@ -323,7 +325,7 @@ export default function Menu() {
           >
             飯類
           </h2>
-          <img src="/menu/hanrui.jpeg" alt="飯類" />
+          <Image src="/menu/hanrui.jpeg" alt="飯類" width={400} height={300} />
         </div>
         {/* アルコール */}
         <div
@@ -345,7 +347,7 @@ export default function Menu() {
           >
             アルコール
           </h2>
-          <img src="/menu/alcohol.jpeg" alt="アルコール" />
+          <Image src="/menu/alcohol.jpeg" alt="アルコール" width={400} height={300} />
         </div>
         {/* ドリンク */}
         <div
@@ -367,7 +369,7 @@ export default function Menu() {
           >
             ドリンク
           </h2>
-          <img src="/menu/drink.jpeg" alt="ドリンク" />
+          <Image src="/menu/drink.jpeg" alt="ドリンク" width={400} height={300} />
         </div>
       </div>
       <Footer />
