@@ -10,6 +10,87 @@ export default function Main() {
       }}
     >
       <ImageSlider />
+      <h2 style={{ textAlign: "center", fontSize: '30px', fontWeight: 'bold', paddingTop: '20px' }}>
+        メニュー
+      </h2>
+      <div
+        id="menu-buttons"
+        style={{
+          display: "flex",
+          flexWrap: "wrap", // 追加: 折り返しを許可
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "16px",
+          marginTop: "10px",
+          marginBottom: "24px"
+        }}
+      >
+        {/* 単品 */}
+        <a href="/menu/tanpin" style={{
+          backgroundColor: "#e6d3a3",
+          color: "#5e503f",
+          fontSize: "20px",
+          borderRadius: "50px",
+          padding: "10px",
+          width: "200px",
+          height: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
+        }}>
+          単品
+        </a>
+        {/* ランチ・定食・セット */}
+        <a href="/menu/teisyoku" style={{
+          backgroundColor: "#e6d3a3",
+          color: "#5e503f",
+          fontSize: "20px",
+          borderRadius: "50px",
+          padding: "10px",
+          width: "200px",
+          height: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}>
+          ランチ<br />定食<br />セット
+        </a>
+        {/* お疲れ様酒セット */}
+        <a href="/menu/otsukare" style={{
+          backgroundColor: "#e6d3a3",
+          color: "#5e503f",
+          fontSize: "20px",
+          borderRadius: "50px",
+          padding: "10px",
+          width: "200px",
+          height: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
+        }}>
+          お疲れ様酒セット
+        </a>
+        {/* 食べ放題・飲み放題 */}
+        <a href="/menu/tabehodai" style={{
+          backgroundColor: "#e6d3a3",
+          color: "#5e503f",
+          fontSize: "20px",
+          borderRadius: "50px",
+          padding: "10px",
+          width: "200px",
+          height: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
+        }}>
+          食べ放題<br />飲み放題
+        </a>
+      </div>
       <div style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <h2 style={{ fontSize: '24px', fontWeight: 'bold', paddingTop: '20px' }}>
           年中無休で営業中！
