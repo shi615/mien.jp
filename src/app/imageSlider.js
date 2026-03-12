@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const images = [
+  "/beer_2.png",
   "/enkai_1.jpg",
   "/counter.jpg",
+  "/outLook.jpg"
 ];
 
 export default function ImageSlider() {
