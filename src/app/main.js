@@ -30,10 +30,10 @@ export default function Main() {
         <a href="/menu/tanpin" style={{
           backgroundColor: "#e6d3a3",
           color: "#5e503f",
-          fontSize: "17px",
+          fontSize: "25px",
           borderRadius: "50px",
           padding: "10px",
-          width: "160px",
+          width: "190px",
           height: "80px",
           display: "flex",
           alignItems: "center",
@@ -46,42 +46,42 @@ export default function Main() {
         <a href="/menu/teisyoku" style={{
           backgroundColor: "#e6d3a3",
           color: "#5e503f",
-          fontSize: "17px",
+          fontSize: "25px",
           borderRadius: "50px",
           padding: "10px",
-          width: "160px",
+          width: "190px",
           height: "80px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
         }}>
-          ランチ<br />定食<br />セット
+          ランチ<br />定食・セット
         </a>
         {/* お疲れ様酒セット */}
         <a href="/menu/otsukare" style={{
           backgroundColor: "#e6d3a3",
           color: "#5e503f",
-          fontSize: "17px",
+          fontSize: "25px",
           borderRadius: "50px",
           padding: "10px",
-          width: "160px",
+          width: "190px",
           height: "80px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center"
         }}>
-          お疲れ様酒セット
+          お疲れ様酒<br />セット
         </a>
         {/* 食べ放題・飲み放題 */}
         <a href="/menu/tabehodai" style={{
           backgroundColor: "#e6d3a3",
           color: "#5e503f",
-          fontSize: "17px",
+          fontSize: "25px",
           borderRadius: "50px",
           padding: "10px",
-          width: "160px",
+          width: "190px",
           height: "80px",
           display: "flex",
           alignItems: "center",
@@ -102,10 +102,12 @@ export default function Main() {
         <p>
           <Link
             href="tel:0566-77-4665"
-            style={{fontSize: "20px", borderBottom: "1px solid"}}
+            style={{fontSize: "30px", borderBottom: "1px solid"}}
           >
             0566-77-4665
           </Link>
+        </p>
+        <p style={{fontSize: "20px"}}>
           （11:00~23:30）
         </p>
       </div>
