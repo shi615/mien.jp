@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 
 const images = [
@@ -11,6 +11,10 @@ const images = [
 
 export default function ImageSlider() {
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  const minSwipeDistance = 50;
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % images.length);
@@ -20,22 +24,81 @@ export default function ImageSlider() {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  const handleTouchStart = (e) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <div style={{ textAlign: "center" }}>
-      <div style={{ position: "relative", width: "100%", maxWidth: 600, margin: "auto", height: 300 }}>
-        <Image
-          id="main-image"
-          src={images[current]}
-          alt={`slide-${current}`}
-          fill
+      <div
+        style={{ position: "relative", width: "100%", maxWidth: 600, margin: "auto", height: 300 }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div
           style={{
-            objectFit: "cover",
-            boxShadow: "0 2px 16px rgba(0,0,0,0.2)",
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
             borderRadius: 8,
+            boxShadow: "0 2px 16px rgba(0,0,0,0.2)",
           }}
-          sizes="(max-width: 600px) 100vw, 600px"
-          priority
-        />
+        >
+          <div
+            id="main-image"
+            style={{
+              display: "flex",
+              width: `${images.length * 100}%`,
+              height: "100%",
+              transform: `translateX(-${current * (100 / images.length)}%)`,
+              transition: "transform 0.4s ease-in-out",
+              touchAction: "pan-y",
+            }}
+          >
+            {images.map((src, idx) => (
+              <div
+                key={idx}
+                style={{
+                  position: "relative",
+                  width: `${100 / images.length}%`,
+                  height: "100%",
+                  flexShrink: 0,
+                }}
+              >
+                <Image
+                  src={src}
+                  alt={`slide-${idx}`}
+                  fill
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  sizes="(max-width: 600px) 100vw, 600px"
+                  priority={idx === 0}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
         <button
           onClick={prevSlide}
           style={{
