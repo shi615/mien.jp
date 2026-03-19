@@ -24,7 +24,7 @@ export default function Otsukare() {
           fontWeight: "bold",
           color: "#5e503f",
           padding: "10px",
-          background: "#e6d3a3",
+          background: "#f9eed1",
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
         }}
       >
@@ -35,7 +35,7 @@ export default function Otsukare() {
           textAlign: "center",
           fontSize: "18px",
           margin: "10px",
-          border: "2px solid #e6d3a3",
+          background: "#f9eed1",
           borderRadius: "8px",
         }}
       >

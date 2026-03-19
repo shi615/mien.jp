@@ -14,7 +14,7 @@ export default function Tabehodai() {
           fontWeight: "bold",
           color: "#5e503f",
           padding: "10px",
-          background: "#e6d3a3",
+          background: "#f9eed1",
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
         }}
       >
