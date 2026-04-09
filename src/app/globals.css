@@ -267,3 +267,136 @@ html {
   margin: 4px 20px;
   opacity: 0.6;
 }
+
+/* ===== TEXT MENU ===== */
+.menu-category {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px 8px;
+}
+
+.menu-category-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 12px 0;
+  margin: 0;
+  scroll-margin-top: 140px;
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--warm-white);
+  border: 1.5px solid #e8d0a0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 11px 16px;
+  border-bottom: 1px solid #f0e6d0;
+  gap: 12px;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item-name {
+  font-size: 15px;
+  color: var(--foreground);
+  line-height: 1.5;
+}
+
+.menu-item-price {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.menu-item-note {
+  font-size: 12px;
+  color: #8b7355;
+}
+
+.menu-note {
+  text-align: center;
+  font-size: 14px;
+  color: #8b7355;
+  padding: 4px 0 8px;
+  margin: 0;
+}
+
+.menu-subcategory {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--foreground);
+  padding: 10px 16px 4px;
+  background: var(--cream);
+  border-bottom: 1px solid #e8d0a0;
+}
+
+.menu-highlight {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.menu-highlight-card {
+  background: linear-gradient(135deg, #fff9f0, #fdf0d8);
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(201, 149, 12, 0.15);
+}
+
+.menu-price-big {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.menu-price-label {
+  font-size: 14px;
+  color: #8b7355;
+  margin: 0 4px;
+}
+
+.drink-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--warm-white);
+  border: 1.5px solid #e8d0a0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.drink-grid .menu-item {
+  border-right: 1px solid #f0e6d0;
+}
+
+.drink-grid .menu-item:nth-child(2n) {
+  border-right: none;
+}
+
+@media (max-width: 600px) {
+  .drink-grid {
+    grid-template-columns: 1fr;
+  }
+  .drink-grid .menu-item {
+    border-right: none;
+  }
+}

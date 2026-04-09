@@ -1,23 +1,36 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
-import Image from "next/image";
+
+const drinks = [
+  "生ビール（中）1杯",
+  "焼酎1杯",
+  "紹興酒1杯",
+  "日本酒1合",
+  "チューハイ1杯",
+  "ハイボール1杯",
+  "ソフトドリンク2杯",
+];
+
+const twoPinItems = [
+  "焼き餃子", "枝豆", "手羽先煮込み", "ニラレバー", "エビフライ",
+  "冷奴", "唐揚げ", "プチ餃子", "ニラホルモン炒め",
+  "トマトサラダ", "台湾風キュウリ", "棒棒鶏", "叉焼", "回鍋肉",
+  "砂肝", "イカのミックス揚", "ポテトフライ", "麻婆豆腐", "子袋",
+  "ゴボウ揚げ", "シメジ揚げ",
+];
+
+const premiumItems = [
+  "醤油ラーメン", "塩ラーメン",
+  "台湾ラーメン", "豚骨ラーメン",
+  "麻婆飯", "天津飯",
+  "炒飯", "キムチ炒飯",
+];
 
 export default function Otsukare() {
-  const drinks = [
-    "生ビール(中)１杯",
-    "焼酎１杯",
-    "紹興酒１杯",
-    "日本酒１合",
-    "チューハイ１杯",
-    "ハイボール１杯",
-    "ソフトドリンク２杯",
-  ];
-
   return (
     <div>
       <Header />
       <h2
-        id="otsukare"
         style={{
           textAlign: "center",
           fontSize: "20px",
@@ -28,95 +41,65 @@ export default function Otsukare() {
           boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
         }}
       >
-        お疲れ様酒セット（1380円）
+        お疲れ様酒セット
       </h2>
-      <div
-        style={{
-          textAlign: "center",
-          fontSize: "18px",
-          margin: "10px",
-          background: "#f9eed1",
-          borderRadius: "8px",
-        }}
-      >
-        飲み物は下記から１種選べます
-        <ul style={{ listStyle: "none", padding: 0, margin: "10px 0" }}>
-          {drinks.map((drink, idx) => (
-            <li key={idx}>{drink}</li>
-          ))}
-        </ul>
-      </div>
-      <div
-        style={{
-          textAlign: "center",
-          fontSize: "40px",
-        }}
-      >
-        ➕
-      </div>
-      <div
-        style={{
-          margin: "10px",
-          border: "2px solid #e6d3a3",
-          borderRadius: "8px",
-        }}
-      >
-        <div
-          style={{
-            textAlign: "center",
-            fontSize: "18px",
-          }}
-        >
-          料理は下から自由に２品選べます
+
+      <div style={{ paddingBottom: "32px" }}>
+        {/* メイン価格 */}
+        <div className="menu-highlight">
+          <div className="menu-highlight-card">
+            <span className="menu-price-big">1,380円</span>
+            <p style={{ fontSize: "13px", color: "#8b7355", margin: "4px 0 0" }}>
+              お酒1杯 ＋ 料理2品 のお得なセット
+            </p>
+          </div>
         </div>
-        <div
-          style={{ display: "flex", justifyContent: "center", margin: "10px" }}
-        >
-          <Image
-            id="otsukare_2pin"
-            src="/menu/otsukare_2pin.jpeg"
-            alt="お疲れ様酒セット_２品"
-            width={400}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
+
+        {/* STEP 1: ドリンク選択 */}
+        <div className="menu-category" style={{ borderTop: "3px solid #9b2d8b" }}>
+          <h2 className="menu-category-title" style={{ color: "#9b2d8b", fontSize: "20px" }}>
+            ① 飲み物を1種選べます
+          </h2>
+          <ul className="menu-items">
+            {drinks.map((drink, idx) => (
+              <li key={idx} className="menu-item">
+                <span className="menu-item-name">{drink}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-      <div
-        style={{
-          textAlign: "center",
-          fontSize: "40px",
-        }}
-      >
-        ➕
-      </div>
-      <div
-        style={{
-          margin: "10px",
-          marginBottom: "20px",
-          border: "2px solid #e6d3a3",
-          borderRadius: "8px",
-        }}
-      >
-        <div
-          style={{
-            textAlign: "center",
-            fontSize: "18px",
-          }}
-        >
-          さらに＋400円で下記から１品選べます
+
+        <div style={{ textAlign: "center", fontSize: "36px", padding: "4px 0" }}>➕</div>
+
+        {/* STEP 2: 料理2品 */}
+        <div className="menu-category" style={{ borderTop: "3px solid #EA332F" }}>
+          <h2 className="menu-category-title" style={{ color: "#EA332F", fontSize: "20px" }}>
+            ② 料理を2品選べます
+          </h2>
+          <ul className="drink-grid">
+            {twoPinItems.map((item, idx) => (
+              <li key={idx} className="menu-item">
+                <span className="menu-item-name">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div
-          style={{ display: "flex", justifyContent: "center", margin: "10px" }}
-        >
-          <Image
-            id="otsukare_400"
-            src="/menu/otsukare_400.jpeg"
-            alt="お疲れ様酒セット_400円"
-            width={400}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
+
+        <div style={{ textAlign: "center", fontSize: "36px", padding: "4px 0" }}>➕</div>
+
+        {/* STEP 3: プレミアム追加 */}
+        <div className="menu-category" style={{ borderTop: "3px solid #F2A93B" }}>
+          <h2 className="menu-category-title" style={{ color: "#F2A93B", fontSize: "20px" }}>
+            ③ さらに＋400円で1品追加
+          </h2>
+          <p className="menu-note">麺類・飯類から1品お選びいただけます</p>
+          <ul className="drink-grid">
+            {premiumItems.map((item, idx) => (
+              <li key={idx} className="menu-item">
+                <span className="menu-item-name">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <Footer />
