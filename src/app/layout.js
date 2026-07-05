@@ -1,4 +1,4 @@
-import { Noto_Serif_JP } from "next/font/google";
+import { Noto_Serif_JP, Yuji_Syuku } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "@/app/globals.css";
 
@@ -6,6 +6,13 @@ const notoSerifJP = Noto_Serif_JP({
   variable: "--font-noto-serif-jp",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const yujiSyuku = Yuji_Syuku({
+  variable: "--font-yuji-syuku",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -18,12 +25,12 @@ export const metadata = {
     template: "%s｜中華美食 味縁",
   },
   description:
-    "味で縁を結ぶ中華料理店。愛知県安城市東新町の本格中華「味縁」。ランチ・定食から食べ放題・飲み放題、テイクアウトまで。年中無休 11:00〜14:00 / 17:00〜23:30。",
+    "味で縁を結ぶ中華料理店。愛知県安城市東新町の本格中華「味縁」。ランチ・定食から食べ放題・飲み放題、テイクアウトまで。営業時間 11:00〜14:00 / 17:00〜23:30(火曜定休)。",
   keywords: ["中華料理", "安城市", "ランチ", "定食", "食べ放題", "テイクアウト", "味縁"],
   openGraph: {
     title: "中華美食 味縁｜愛知県安城市の中華料理店",
     description:
-      "味で縁を結ぶ中華料理店。ランチ・定食から食べ放題・飲み放題、テイクアウトまで。年中無休で営業中!",
+      "味で縁を結ぶ中華料理店。ランチ・定食から食べ放題・飲み放題、テイクアウトまで。火曜定休。",
     url: "/",
     siteName: "中華美食 味縁",
     locale: "ja_JP",
@@ -66,13 +73,13 @@ const restaurantJsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      dayOfWeek: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "11:00",
       closes: "14:00",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      dayOfWeek: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "17:00",
       closes: "23:30",
     },
@@ -84,7 +91,7 @@ const restaurantJsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body className={`${notoSerifJP.variable} antialiased`}>
+      <body className={`${notoSerifJP.variable} ${yujiSyuku.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }}

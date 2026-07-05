@@ -1,12 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
+import PosterGallery from "@/app/posterGallery";
 
 export default function TakeOut() {
+  const takeOutPosters = [
+    { src: "/poster/bento.jpeg", alt: "人気No.1 美味しいお弁当 税込800円のポスター", width: 724, height: 1086 },
+    { src: "/poster/starter.jpeg", alt: "期間限定・ご予約受付中 中華オードブル Aセット5,280円 / Bセット4,880円のポスター", width: 1054, height: 1492 },
+  ];
+
   return (
     <div style={{ padding: "24px 20px 28px", textAlign: "center" }}>
-      <h2 className="section-title">◆ テイクアウト ◆</h2>
+      <h2 className="section-title">テイクアウト</h2>
 
-      <div className="info-card" style={{ maxWidth: "480px", margin: "20px auto 0" }}>
+      <PosterGallery posters={takeOutPosters} gridClassName="poster-grid-2" />
+
+      <p style={{ fontSize: "15px", margin: "14px 0 0" }}>
+        ご注文・ご予約は{" "}
+        <Link
+          href="tel:0566-77-4665"
+          style={{ color: "var(--primary)", fontWeight: "bold", textDecoration: "none", borderBottom: "2px solid var(--gold)" }}
+        >
+          ☎ 0566-77-4665
+        </Link>
+      </p>
+
+      {/* ── デリバリー ── */}
+      <div className="info-card" style={{ maxWidth: "480px", margin: "24px auto 0" }}>
         <p style={{ fontSize: "17px", color: "#5a3010", marginBottom: "16px" }}>
           出前館・UberEats でもご注文いただけます！
         </p>
