@@ -1,6 +1,12 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
-import Image from "next/image";
+import ZoomableImage from "@/app/menu/zoomableImage";
+
+export const metadata = {
+  title: "お疲れ様酒セット",
+  description:
+    "中華美食 味縁のお疲れ様酒セット(1380円)。お好きなドリンク1杯と料理2品が選べるお得な晩酌セットです。",
+};
 
 export default function Otsukare() {
   const drinks = [
@@ -72,12 +78,12 @@ export default function Otsukare() {
         <div
           style={{ display: "flex", justifyContent: "center", margin: "10px" }}
         >
-          <Image
+          <ZoomableImage
             id="otsukare_2pin"
             src="/menu/otsukare_2pin.jpeg"
-            alt="お疲れ様酒セット_２品"
-            width={400}
-            height={300}
+            alt="お疲れ様酒セットで選べる料理2品のメニュー表"
+            width={1048}
+            height={815}
             style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
@@ -109,12 +115,12 @@ export default function Otsukare() {
         <div
           style={{ display: "flex", justifyContent: "center", margin: "10px" }}
         >
-          <Image
+          <ZoomableImage
             id="otsukare_400"
             src="/menu/otsukare_400.jpeg"
-            alt="お疲れ様酒セット_400円"
-            width={400}
-            height={300}
+            alt="お疲れ様酒セット+400円で選べる一品のメニュー表"
+            width={426}
+            height={876}
             style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>

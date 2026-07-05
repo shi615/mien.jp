@@ -1,7 +1,19 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
 import Link from "next/link";
-import Image from "next/image";
+import ZoomableImage from "@/app/menu/zoomableImage";
+
+export const metadata = {
+  title: "ランチ・定食・セットメニュー",
+  description:
+    "中華美食 味縁のランチ・定食・セットメニュー。お得なランチから、ボリューム満点の定食・セットまでご用意しています。",
+};
+
+const sections = [
+  { id: "lunch", label: "ランチ", color: "#EA332F", image: "/menu/lunch.jpeg", width: 692, height: 686 },
+  { id: "teisyoku", label: "定食", color: "#DE742D", image: "/menu/teisyoku.jpeg", width: 847, height: 997 },
+  { id: "set", label: "セット", color: "#D15F27", image: "/menu/set.jpeg", width: 746, height: 1050 },
+];
 
 export default function Teisyoku() {
   return (
@@ -32,108 +44,46 @@ export default function Teisyoku() {
             listStyle: "none",
           }}
         >
-          <li>
-            <Link href="#lunch">
-              <h3 style={{ borderBottom: "1px solid" }}>ランチ</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#teiysoku">
-              <h3 style={{ borderBottom: "1px solid" }}>定食</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#set">
-              <h3 style={{ borderBottom: "1px solid" }}>セット</h3>
-            </Link>
-          </li>
+          {sections.map(({ id, label }) => (
+            <li key={id}>
+              <Link href={`#${id}`}>
+                <h3 style={{ borderBottom: "1px solid" }}>{label}</h3>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div id="teisyoku-body" style={{ textAlign: "center", margin: "32px 0" }}>
-        {/* ランチ */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #EA332F",
-          }}
-        >
-          <h2
-            id="lunch"
+        {sections.map(({ id, label, color, image, width, height }) => (
+          <div
+            key={id}
             style={{
-              scrollMarginTop: "70px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#EA332F",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              borderTop: `2px solid ${color}`,
             }}
           >
-            ランチ
-          </h2>
-          <Image
-            src="/menu/lunch.jpeg"
-            alt="ランチ"
-            width={400}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-        </div>
-        {/* 定食 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #DE742D",
-          }}
-        >
-          <h2
-            id="teiysoku"
-            style={{
-              scrollMarginTop: "70px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#DE742D",
-            }}
-          >
-            定食
-          </h2>
-          <Image
-            src="/menu/teisyoku.jpeg"
-            alt="定食"
-            width={400}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-        </div>
-        {/* セット */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #D15F27",
-          }}
-        >
-          <h2
-            id="set"
-            style={{
-              scrollMarginTop: "70px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#D15F27",
-            }}
-          >
-            セット
-          </h2>
-          <Image
-            src="/menu/set.jpeg"
-            alt="セット"
-            width={400}
-            height={300}
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-        </div>
+            <h2
+              id={id}
+              style={{
+                scrollMarginTop: "70px",
+                textAlign: "center",
+                fontSize: "30px",
+                color,
+              }}
+            >
+              {label}
+            </h2>
+            <ZoomableImage
+              src={image}
+              alt={`${label}のメニュー表`}
+              width={width}
+              height={height}
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          </div>
+        ))}
       </div>
       <Footer />
     </div>

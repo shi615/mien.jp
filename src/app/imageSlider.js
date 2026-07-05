@@ -3,10 +3,10 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/beer_2.png",
-  "/enkai_1.jpg",
-  "/counter.jpg",
-  "/outLook.jpg"
+  { src: "/beer_2.jpg", alt: "キンキンに冷えた生ビール" },
+  { src: "/enkai_1.jpg", alt: "宴会コースの中華料理の数々" },
+  { src: "/counter.jpg", alt: "店内カウンター席の様子" },
+  { src: "/outLook.jpg", alt: "中華美食 味縁の店舗外観" },
 ];
 
 export default function ImageSlider() {
@@ -90,7 +90,7 @@ export default function ImageSlider() {
               touchAction: "pan-y",
             }}
           >
-            {images.map((src, idx) => (
+            {images.map(({ src, alt }, idx) => (
               <div
                 key={idx}
                 style={{
@@ -102,7 +102,7 @@ export default function ImageSlider() {
               >
                 <Image
                   src={src}
-                  alt={`slide-${idx}`}
+                  alt={alt}
                   fill
                   style={{ objectFit: "cover" }}
                   sizes="(max-width: 600px) 100vw, 640px"
@@ -110,6 +110,33 @@ export default function ImageSlider() {
                 />
               </div>
             ))}
+          </div>
+
+          {/* Catch copy overlay */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 0,
+              padding: "36px 20px 14px",
+              background: "linear-gradient(transparent, rgba(0, 0, 0, 0.6))",
+              pointerEvents: "none",
+              textAlign: "center",
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                color: "#fff",
+                fontSize: "clamp(18px, 4.5vw, 26px)",
+                fontWeight: "bold",
+                letterSpacing: "0.14em",
+                textShadow: "0 2px 10px rgba(0, 0, 0, 0.7)",
+              }}
+            >
+              味で縁を結ぶ、本格中華。
+            </p>
           </div>
         </div>
 

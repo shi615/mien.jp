@@ -1,11 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navRef = useRef(null);
+    const buttonRef = useRef(null);
+
+    useEffect(() => {
+        if (!menuOpen) return;
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') setMenuOpen(false);
+        };
+        const onPointerDown = (e) => {
+            if (
+                navRef.current && !navRef.current.contains(e.target) &&
+                buttonRef.current && !buttonRef.current.contains(e.target)
+            ) {
+                setMenuOpen(false);
+            }
+        };
+        window.addEventListener('keydown', onKeyDown);
+        window.addEventListener('pointerdown', onPointerDown);
+        return () => {
+            window.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener('pointerdown', onPointerDown);
+        };
+    }, [menuOpen]);
 
     const menuLinkStyle = {
         textDecoration: "none",
@@ -56,14 +79,17 @@ export default function Header() {
 
             <button
                 id="menu-button"
+                ref={buttonRef}
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="メニュー"
+                aria-expanded={menuOpen}
+                aria-controls="header-nav"
             >
                 {menuOpen ? "✕" : "☰"}
             </button>
 
             {menuOpen && (
-                <nav style={{
+                <nav id="header-nav" ref={navRef} style={{
                     position: "absolute",
                     top: "72px",
                     right: "10px",

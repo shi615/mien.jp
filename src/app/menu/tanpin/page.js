@@ -2,7 +2,28 @@ import React from "react";
 import Header from "@/app/header";
 import Footer from "@/app/footer";
 import Link from "next/link";
-import Image from "next/image";
+import ZoomableImage from "@/app/menu/zoomableImage";
+
+export const metadata = {
+  title: "単品メニュー",
+  description:
+    "中華美食 味縁の単品メニュー。前菜・揚げ物・肉料理・海鮮料理・点心・麺類・飯類など豊富な本格中華をご用意しています。",
+};
+
+const categories = [
+  { id: "zensai", label: "前菜", color: "#EA332F", image: "/menu/zensai.jpeg", width: 564, height: 648 },
+  { id: "agemono", label: "揚げ物", color: "#DE742D", image: "/menu/agemono.jpeg", width: 561, height: 534 },
+  { id: "niku", label: "肉料理", color: "#D15F27", image: "/menu/niku.jpeg", width: 570, height: 699 },
+  { id: "yasai", label: "野菜料理", color: "#4E8326", image: "/menu/yasai.jpeg", width: 565, height: 476 },
+  { id: "kaisen", label: "海鮮料理", color: "#53B7E3", image: "/menu/kaisen.jpeg", width: 573, height: 281 },
+  { id: "teppan", label: "鉄板", color: "#E33231", image: "/menu/teppan.jpeg", width: 561, height: 322 },
+  { id: "tenshin", label: "点心", color: "#E1AA3A", image: "/menu/tenshin.jpeg", width: 567, height: 418 },
+  { id: "okayu", label: "お粥・スープ", color: "#DCAA3B", image: "/menu/okayu.jpeg", width: 567, height: 175 },
+  { id: "menrui", label: "麺類", color: "#D65F28", image: "/menu/menrui.jpeg", width: 575, height: 635 },
+  { id: "hanrui", label: "飯類", color: "#CF2D24", image: "/menu/hanrui.jpeg", width: 575, height: 539 },
+  { id: "alcohol", label: "アルコール", color: "#F2A93B", image: "/menu/alcohol.jpeg", width: 1688, height: 1200 },
+  { id: "drink", label: "ドリンク", color: "#F0AC3F", image: "/menu/drink.jpeg", width: 485, height: 369 },
+];
 
 export default function Menu() {
   return (
@@ -44,333 +65,40 @@ export default function Menu() {
             listStyle: "none",
           }}
         >
-          <li>
-            <Link href="#zensai">
-              <h3 style={{ borderBottom: "1px solid" }}>前菜</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#agemono">
-              <h3 style={{ borderBottom: "1px solid" }}>揚げ物</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#niku">
-              <h3 style={{ borderBottom: "1px solid" }}>肉料理</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#yasai">
-              <h3 style={{ borderBottom: "1px solid" }}>野菜料理</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#kaisen">
-              <h3 style={{ borderBottom: "1px solid" }}>海鮮料理</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#teppan">
-              <h3 style={{ borderBottom: "1px solid" }}>鉄板</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#tenshin">
-              <h3 style={{ borderBottom: "1px solid" }}>点心</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#okayu">
-              <h3 style={{ borderBottom: "1px solid" }}>お粥・スープ</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#menrui">
-              <h3 style={{ borderBottom: "1px solid" }}>麺類</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#hanrui">
-              <h3 style={{ borderBottom: "1px solid" }}>飯類</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#alcohol">
-              <h3 style={{ borderBottom: "1px solid" }}>アルコール</h3>
-            </Link>
-          </li>
-          <li>
-            <Link href="#drink">
-              <h3 style={{ borderBottom: "1px solid" }}>ドリンク</h3>
-            </Link>
-          </li>
+          {categories.map(({ id, label }) => (
+            <li key={id}>
+              <Link href={`#${id}`}>
+                <h3 style={{ borderBottom: "1px solid" }}>{label}</h3>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div id="menu" style={{ textAlign: "center", margin: "32px 0" }}>
-        {/* 前菜 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #EA332F",
-          }}
-        >
-          <h2
-            id="zensai"
+        {categories.map(({ id, label, color, image, width, height }) => (
+          <div
+            key={id}
             style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#EA332F",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              borderTop: `2px solid ${color}`,
             }}
           >
-            前菜
-          </h2>
-          <Image src="/menu/zensai.jpeg" alt="前菜" width={400} height={300} />
-        </div>
-        {/* 揚げ物 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #DE742D",
-          }}
-        >
-          <h2
-            id="agemono"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#DE742D",
-            }}
-          >
-            揚げ物
-          </h2>
-          <Image src="/menu/agemono.jpeg" alt="揚げ物" width={400} height={300} />
-        </div>
-        {/* 肉料理 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #D15F27",
-          }}
-        >
-          <h2
-            id="niku"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#D15F27",
-            }}
-          >
-            肉料理
-          </h2>
-          <Image src="/menu/niku.jpeg" alt="肉料理" width={400} height={300} />
-        </div>
-        {/* 野菜料理 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #4E8326",
-          }}
-        >
-          <h2
-            id="yasai"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#4E8326",
-            }}
-          >
-            野菜料理
-          </h2>
-          <Image src="/menu/yasai.jpeg" alt="野菜料理" width={400} height={300} />
-        </div>
-        {/* 海鮮料理 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #53B7E3",
-          }}
-        >
-          <h2
-            id="kaisen"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#53B7E3",
-            }}
-          >
-            海鮮料理
-          </h2>
-          <Image src="/menu/kaisen.jpeg" alt="海鮮料理" width={400} height={300} />
-        </div>
-        {/* 鉄板 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #E33231",
-          }}
-        >
-          <h2
-            id="teppan"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#E33231",
-            }}
-          >
-            鉄板
-          </h2>
-          <Image src="/menu/teppan.jpeg" alt="鉄板" width={400} height={300} />
-        </div>
-        {/* 点心 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #E1AA3A",
-          }}
-        >
-          <h2
-            id="tenshin"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#E1AA3A",
-            }}
-          >
-            点心
-          </h2>
-          <Image src="/menu/tenshin.jpeg" alt="点心" width={400} height={300} />
-        </div>
-        {/* お粥・スープ */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #DCAA3B",
-          }}
-        >
-          <h2
-            id="okayu"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#DCAA3B",
-            }}
-          >
-            お粥・スープ
-          </h2>
-          <Image src="/menu/okayu.jpeg" alt="お粥・スープ" width={400} height={300} />
-        </div>
-        {/* 麺類 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #D65F28",
-          }}
-        >
-          <h2
-            id="menrui"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#D65F28",
-            }}
-          >
-            麺類
-          </h2>
-          <Image src="/menu/menrui.jpeg" alt="麺類" width={400} height={300} />
-        </div>
-        {/* 飯類 */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #CF2D24",
-          }}
-        >
-          <h2
-            id="hanrui"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#CF2D24",
-            }}
-          >
-            飯類
-          </h2>
-          <Image src="/menu/hanrui.jpeg" alt="飯類" width={400} height={300} />
-        </div>
-        {/* アルコール */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #F2A93B",
-          }}
-        >
-          <h2
-            id="alcohol"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#F2A93B",
-            }}
-          >
-            アルコール
-          </h2>
-          <Image src="/menu/alcohol.jpeg" alt="アルコール" width={400} height={300} />
-        </div>
-        {/* ドリンク */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderTop: "2px solid #F0AC3F",
-          }}
-        >
-          <h2
-            id="drink"
-            style={{
-              scrollMarginTop: "170px",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "#F0AC3F",
-            }}
-          >
-            ドリンク
-          </h2>
-          <Image src="/menu/drink.jpeg" alt="ドリンク" width={400} height={300} />
-        </div>
+            <h2
+              id={id}
+              style={{
+                scrollMarginTop: "170px",
+                textAlign: "center",
+                fontSize: "30px",
+                color,
+              }}
+            >
+              {label}
+            </h2>
+            <ZoomableImage src={image} alt={`${label}のメニュー表`} width={width} height={height} />
+          </div>
+        ))}
       </div>
       <Footer />
     </div>
