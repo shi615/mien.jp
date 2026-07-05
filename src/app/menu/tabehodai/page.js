@@ -1,6 +1,12 @@
 import Header from "@/app/header";
 import Footer from "@/app/footer";
-import Image from "next/image";
+import ZoomableImage from "@/app/menu/zoomableImage";
+
+export const metadata = {
+  title: "食べ放題・飲み放題",
+  description:
+    "中華美食 味縁の食べ放題・飲み放題コース。本格中華を心ゆくまでお楽しみいただけます。宴会・パーティーにもおすすめです。",
+};
 
 export default function Tabehodai() {
   return (
@@ -28,25 +34,25 @@ export default function Tabehodai() {
           alignItems: "center",
         }}
       >
-        <Image
+        <ZoomableImage
           src="/menu/tabehodai_1.jpg"
-          alt="食べ放題・飲み放題1"
-          width={600}
-          height={400}
+          alt="食べ放題コースの案内"
+          width={1087}
+          height={1600}
           style={{ maxWidth: "600px", margin: "20px 0", height: "auto" }}
         />
-        <Image
+        <ZoomableImage
           src="/menu/tabehodai_2.jpg"
-          alt="食べ放題・飲み放題2"
-          width={600}
-          height={400}
+          alt="食べ放題メニューの一覧"
+          width={847}
+          height={1200}
           style={{ maxWidth: "600px", margin: "20px 0", height: "auto" }}
         />
-        <Image
+        <ZoomableImage
           src="/menu/tabehodai_3.jpg"
-          alt="食べ放題・飲み放題3"
-          width={600}
-          height={400}
+          alt="飲み放題メニューの一覧"
+          width={1131}
+          height={1600}
           style={{ maxWidth: "600px", margin: "20px 0", height: "auto" }}
         />
       </div>
