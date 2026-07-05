@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function About() {
   return (
     <div style={{ padding: "24px 20px 28px" }}>
-      <h2 className="section-title">◆ 当店のこだわり ◆</h2>
+      <h2 className="section-title">当店のこだわり</h2>
 
       <div style={{
         display: "flex",
@@ -18,7 +18,7 @@ export default function About() {
             新米{" "}
             <Link
               href="https://kuriya.co.jp/blog/other/20201009-1975.html"
-              style={{ color: "#c41e3a", borderBottom: "1px solid #c9950c", textDecoration: "none" }}
+              style={{ color: "var(--primary)", borderBottom: "1px solid var(--gold)", textDecoration: "none" }}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -34,7 +34,7 @@ export default function About() {
             愛知県西尾市養鶏場{" "}
             <Link
               href="https://kira-farm.com/"
-              style={{ color: "#c41e3a", borderBottom: "1px solid #c9950c", textDecoration: "none" }}
+              style={{ color: "var(--primary)", borderBottom: "1px solid var(--gold)", textDecoration: "none" }}
               target="_blank"
               rel="noopener noreferrer"
             >

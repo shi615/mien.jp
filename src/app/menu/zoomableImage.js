@@ -57,7 +57,7 @@ export default function ZoomableImage({ src, alt, width, height, id, style }) {
             sizes="96vw"
             quality={90}
             style={{
-              width: `min(96vw, calc(92vh * ${(width / height).toFixed(4)}), ${width}px)`,
+              width: `min(96vw, calc(92vh * ${(width / height).toFixed(4)}))`,
               height: "auto",
               borderRadius: "8px",
             }}

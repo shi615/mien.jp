@@ -10,11 +10,10 @@ export default function Footer() {
         flexDirection: "column",
         gap: "10px",
       }}>
-        <h2 style={{
-          fontSize: 22,
-          fontWeight: "bold",
+        <h2 className="brush-text" style={{
+          fontSize: 24,
           color: "#f5d06a",
-          letterSpacing: "0.06em",
+          letterSpacing: "0.1em",
           marginBottom: "4px",
         }}>
           中華美食 味縁
@@ -33,7 +32,7 @@ export default function Footer() {
             <Link href="tel:0566-77-4665">
               ☎ 0566-77-4665
             </Link>
-            {"　"}（毎日 11:00 〜 23:30）
+            {"　"}（11:00 〜 23:30・火曜定休）
           </p>
         </div>
 
