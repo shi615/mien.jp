@@ -225,25 +225,6 @@ footer a:hover {
   transform: rotate(-8deg);
 }
 
-/* ===== PRICE ===== */
-.price-tax {
-  font-size: 13px;
-  color: var(--primary);
-}
-
-.price-num {
-  font-size: 36px;
-  font-weight: bold;
-  color: var(--primary);
-  letter-spacing: 0.02em;
-}
-
-.price-unit {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--primary);
-}
-
 /* ===== PHONE CTA BAND ===== */
 .phone-cta {
   display: flex;
@@ -553,80 +534,280 @@ footer a:hover {
   background: var(--cream);
 }
 
-/* ===== MENU PAGE HEADER (category nav) ===== */
-#menu img {
-  width: 50%;
-}
-
-@media (max-width: 600px) {
-  #menu img {
-    width: 95%;
-  }
-}
-
-#menu-header {
-  font-size: 20px;
-  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-  color: white;
-  border-bottom: 2px solid var(--gold);
-}
-
-@media (max-width: 600px) {
-  #menu-header {
-    font-size: 15px;
-  }
-}
-
-#menu-header h3 {
-  font-weight: bold;
-}
-
 /* ===== SMOOTH SCROLL ===== */
 html {
   scroll-behavior: smooth;
 }
 
 /* ===== MENU PAGES ===== */
-#otsukare_2pin {
-  width: 50%;
+.menu-hero {
+  text-align: center;
+  padding: 30px 16px 6px;
+}
+
+.menu-hero-title {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 42px);
+  color: var(--primary);
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+  line-height: 1.25;
+}
+
+.menu-hero-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  margin: 12px auto 0;
+}
+
+.menu-hero-lead {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.menu-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 760px;
+  margin: 18px auto 24px;
+  padding: 0 16px;
+}
+
+.menu-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 4px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  word-break: keep-all;
+  color: var(--primary);
+  background: var(--warm-white);
+  border: 2px solid var(--primary-dark);
+  box-shadow: inset 0 0 0 2px var(--warm-white), inset 0 0 0 3px var(--gold);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.menu-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 2px var(--warm-white), inset 0 0 0 3px var(--gold), 0 6px 14px rgba(0, 0, 0, 0.16);
+}
+
+.menu-tab[aria-current="page"] {
+  color: var(--cream);
+  background: var(--primary);
+  box-shadow: inset 0 0 0 2px var(--primary), inset 0 0 0 3px var(--gold-light);
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {
-  #otsukare_2pin {
+  .menu-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .menu-tab {
+    font-size: 13.5px;
+    padding: 10px 4px;
+  }
+}
+
+.menu-cat-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--warm-white);
+  border-top: 1px solid var(--washi-line);
+  border-bottom: 2px solid var(--gold);
+  padding: 10px 12px;
+}
+
+.menu-cat-nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.menu-cat-nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-cat-nav li {
+  flex-shrink: 0;
+}
+
+/* 収まるときは中央寄せ、あふれたら横スクロール(justify-content: center だと左端が切れる) */
+.menu-cat-nav li:first-child {
+  margin-left: auto;
+}
+
+.menu-cat-nav li:last-child {
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .menu-cat-nav {
+    padding: 8px 10px;
+  }
+
+  .menu-cat-nav ul {
+    gap: 6px;
+  }
+
+  .menu-cat-chip {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
+
+.menu-cat-chip {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 15px;
+  color: var(--primary);
+  background: var(--cream);
+  border: 1px solid var(--washi-line);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.menu-cat-chip:hover,
+.menu-cat-chip[aria-current] {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--cream);
+}
+
+/* ===== MENU GRID (単品ページ: 2カラム配置) ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: 22px;
+  max-width: 1160px;
+  margin: 28px auto 0;
+  padding: 0 20px;
+}
+
+/* 単品ページ: デスクトップは3カラム */
+.menu-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1000px) {
+  .menu-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.menu-grid .menu-section {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-grid .frame-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-grid .frame-section-inner {
+  flex: 1;
+}
+
+.menu-section--wide {
+  grid-column: 1 / -1;
+}
+
+/* 3カラムグリッド中、2カラム分を占める(食べ放題のお料理2枚など) */
+.menu-section--span2 {
+  grid-column: span 2;
+}
+
+/* ページにポスター1枚だけの単独セクション(お疲れ様酒セットなど) */
+.menu-section.menu-section--single {
+  max-width: 900px;
+}
+
+/* 1セクション内にポスター2枚を横並び(食べ放題のお料理など) */
+.poster-duo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.menu-section--solo {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(569px, 100%);
+}
+
+@media (max-width: 800px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 16px;
+  }
+
+  .menu-section--solo {
     width: 100%;
   }
-}
 
-#otsukare_400 {
-  width: 20%;
-}
+  .menu-section--span2 {
+    grid-column: auto;
+  }
 
-@media (max-width: 600px) {
-  #otsukare_400 {
-    width: 50%;
+  .poster-duo {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
-#teisyoku-body img {
-  width: 40%;
-  margin: 10px;
+.menu-section {
+  max-width: 640px;
+  margin: 26px auto 0;
+  padding: 0 16px;
+  /* sticky なカテゴリナビ(1行・約52px)ぶんアンカー位置を下げる */
+  scroll-margin-top: 76px;
 }
 
-@media (max-width: 600px) {
-  #teisyoku-body img {
-    width: 95%;
-  }
+.menu-section .frame-section-inner {
+  padding: 18px 14px 14px;
 }
 
-#tabehodai-body img {
-  width: 40%;
-  margin: 10px;
+.menu-section .ribbon-label {
+  margin: 0;
 }
 
-@media (max-width: 600px) {
-  #tabehodai-body img {
-    width: 95%;
-  }
+.menu-section-note {
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: var(--foreground);
+}
+
+.menu-section-body {
+  margin-top: 14px;
 }
 
 .main-image {
