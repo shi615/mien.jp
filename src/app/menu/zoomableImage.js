@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function ZoomableImage({ src, alt, width, height, id, style }) {
+export default function ZoomableImage({ src, alt, width, height, id, style, sizes }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ZoomableImage({ src, alt, width, height, id, style }) {
         alt={alt}
         width={width}
         height={height}
-        sizes="(max-width: 600px) 95vw, 50vw"
+        sizes={sizes ?? "(max-width: 600px) 95vw, 50vw"}
         onClick={() => setOpen(true)}
         style={{ cursor: "zoom-in", ...style }}
       />
